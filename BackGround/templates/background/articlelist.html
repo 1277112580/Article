@@ -1,0 +1,41 @@
+{% extends 'background/base.html' %}
+{% block title %}
+    文章列表
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>文章ID</th>
+                <th>文章名字</th>
+                <th>文章作者</th>
+                <th>发表者</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for one in article_obj %}
+           <tr>
+                <th>{{ one.id }}</th>
+                <th>{{ one.title }}</th>
+                <th>{{ one.author.name}}</th>
+                <th>{{ one.user.username }}</th>
+                <th>
+                    <a id="nowshow" href="/BackGround/getarticle/{{ one.id }}" type="submit" class="btn btn-primary" style="color: #fff">查看</a>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block script %}
+{#    <script>#}
+{#        $("#nowshow").click(#}
+{#            function () {#}
+{#                #}
+{#            }#}
+{#        )#}
+{#    </script>#}
+
+{% endblock %}

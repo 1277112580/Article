@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text" name="serach">
+    <input type="submit" name="搜索">
+</form>
+{{ article }}
+
+<h2>post表单</h2>
+<form action="" method="post">
+{#    在form表单域中添加 {% csrf——token %}这个标签 隐藏setting中的csrf设置#}
+    {% csrf_token %}
+    用户名：<input type="text" name="username"><br>
+    密   码：<input type="password" name="password"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

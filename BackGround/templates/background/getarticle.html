@@ -1,0 +1,18 @@
+{% extends 'background/base.html' %}
+{% block title %}
+    查看文章
+{% endblock %}
+
+{% block content %}
+    <div>
+        <p style="text-align: center;font-size: 22px;">{{ article.title }}</p>
+        <hr>
+        <p style="font-size: 15px;text-align: right;padding-right: 30px;">作者：{{ article.author.name }}</p>
+        <hr>
+        <div>文章简介:{{ article.description }}</div>
+        <hr>
+        <div>文章内容：</div>
+        <hr>
+        <div style="padding-left: 30px">{{ article.content }}</div>
+    </div>
+{% endblock %}
